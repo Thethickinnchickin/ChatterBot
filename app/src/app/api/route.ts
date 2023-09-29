@@ -1,20 +1,20 @@
-import { NextResponse } from "next/server";
-import OpenAI from "openai";
+// import { NextResponse } from "next/server";
+// import OpenAI from "openai";
 
-const openai = new OpenAI({
-  apiKey: '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', // This is also the default, can be omitted
-});
+// const openai = new OpenAI({
+//   apiKey: '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', // This is also the default, can be omitted
+// });
 
-export async function POST(req: Request, res: NextResponse) {
-    const body = await req.json();
+// export async function POST(req: Request, res: NextResponse) {
+//     const body = await req.json();
 
   
-    const completion = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
-      messages: body.messages,
-    });
-    console.log(completion.choices[0].message);
-    const theResponse = completion.choices[0].message;
+//     const completion = await openai.chat.completions.create({
+//       model: "gpt-3.5-turbo",
+//       messages: body.messages,
+//     });
+//     console.log(completion.choices[0].message);
+//     const theResponse = completion.choices[0].message;
   
-    return NextResponse.json({ output: theResponse }, { status: 200 });
-  }
+//     return NextResponse.json({ output: theResponse }, { status: 200 });
+//   }
