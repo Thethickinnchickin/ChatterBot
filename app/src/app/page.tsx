@@ -3,14 +3,14 @@ import { useState } from "react";
 import Image from "next/image";
 
 export default function Home() {
-  const [theInput, setTheInput] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [messages, setMessages] = useState([
-    {
-      role: "assistant",
-      content: "Yo, this is ChatterBot! How can I help you today?",
-    },
-  ]);
+  // const [theInput, setTheInput] = useState("");
+  // const [isLoading, setIsLoading] = useState(false);
+  // const [messages, setMessages] = useState([
+  //   {
+  //     role: "assistant",
+  //     content: "Yo, this is ChatterBot! How can I help you today?",
+  //   },
+  // ]);
 
   // const callGetResponse = async () => {
   //   setIsLoading(true);
@@ -38,12 +38,12 @@ export default function Home() {
 
   // };
 
-  const Submit = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      //callGetResponse();
-    }
-  }
+  // const Submit = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
+  //   if (event.key === "Enter") {
+  //     event.preventDefault();
+  //     //callGetResponse();
+  //   }
+  // }
 
   
 
