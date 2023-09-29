@@ -20,7 +20,7 @@ export default function Home() {
     setTheInput("");
     console.log("Calling OpenAI...");
 
-    const response = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}`, {
+    const response = await fetch(`https://6425q4q74l.execute-api.us-west-2.amazonaws.com/Testing`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
