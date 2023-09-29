@@ -1,4 +1,4 @@
-
+"use client";
 import { useState } from "react";
 import Image from "next/image";
 
@@ -61,7 +61,7 @@ export default function Home() {
           alt="Picture of the author"
         />
     
-        <div
+        {/* <div
           className="flex  h-[35rem] w-[40rem] flex-col items-center bg-gray-600 rounded-xl"
         >
           <div
@@ -101,7 +101,7 @@ export default function Home() {
               send
             </button>
           </div>
-        </div>
+        </div> */}
     
         <div></div>
       </main>
