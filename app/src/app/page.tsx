@@ -54,13 +54,13 @@ export default function Home() {
       >
 
         <h1 className="text-5xl font-sans">ChatterBot</h1>
-        <Image
+        {/* <Image
           src="/logo.png"
           width={50}
           height={50}
           alt="Picture of the author"
         />
-    
+     */}
         {/* <div
           className="flex  h-[35rem] w-[40rem] flex-col items-center bg-gray-600 rounded-xl"
         >
