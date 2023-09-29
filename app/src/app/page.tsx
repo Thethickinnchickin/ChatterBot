@@ -1,49 +1,49 @@
-//"use client";
-// import { useState } from "react";
-// import Image from "next/image";
+"use client";
+import { useState } from "react";
+import Image from "next/image";
 
 export default function Home() {
-  // const [theInput, setTheInput] = useState("");
-  // const [isLoading, setIsLoading] = useState(false);
-  // const [messages, setMessages] = useState([
-  //   {
-  //     role: "assistant",
-  //     content: "Yo, this is ChatterBot! How can I help you today?",
-  //   },
-  // ]);
+  const [theInput, setTheInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [messages, setMessages] = useState([
+    {
+      role: "assistant",
+      content: "Yo, this is ChatterBot! How can I help you today?",
+    },
+  ]);
 
-  // const callGetResponse = async () => {
-  //   setIsLoading(true);
-  //   let temp = messages;
-  //   temp.push({ role: "user", content: theInput });
-	// 	setMessages(temp)
-  //   setTheInput("");
-  //   console.log("Calling OpenAI...");
+  const callGetResponse = async () => {
+    setIsLoading(true);
+    let temp = messages;
+    temp.push({ role: "user", content: theInput });
+		setMessages(temp)
+    setTheInput("");
+    console.log("Calling OpenAI...");
 
-  //   const response = await fetch(`https://6425q4q74l.execute-api.us-west-2.amazonaws.com/Testing`, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
+    const response = await fetch(`https://6425q4q74l.execute-api.us-west-2.amazonaws.com/Testing`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
 
-  //     body: JSON.stringify({ messages }),
-  //   });
+      body: JSON.stringify({ messages }),
+    });
 
-  //   const data = await response.json();
-  //   const { output } = data;
-  //   console.log("OpenAI replied...", output.content);
+    const data = await response.json();
+    const { output } = data;
+    console.log("OpenAI replied...", output.content);
 
-  //   setMessages((prevMessages) => [...prevMessages, output]);
-  //   setIsLoading(false);
+    setMessages((prevMessages) => [...prevMessages, output]);
+    setIsLoading(false);
 
-  // };
+  };
 
-  // const Submit = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
-  //   if (event.key === "Enter") {
-  //     event.preventDefault();
-  //     //callGetResponse();
-  //   }
-  // }
+  const Submit = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      callGetResponse();
+    }
+  }
 
   
 
@@ -54,14 +54,14 @@ export default function Home() {
       >
 
         <h1 className="text-5xl font-sans">ChatterBot</h1>
-        {/* <Image
+        <Image
           src="/logo.png"
           width={50}
           height={50}
           alt="Picture of the author"
         />
-     */}
-        {/* <div
+    
+        <div
           className="flex  h-[35rem] w-[40rem] flex-col items-center bg-gray-600 rounded-xl"
         >
           <div
@@ -95,13 +95,13 @@ export default function Home() {
             onKeyDown={Submit} />
             <button
             
-    
+              onClick={callGetResponse}
               className="w-[15%] bg-blue-500 px-4 py-2 rounded-r"
             >
               send
             </button>
           </div>
-        </div> */}
+        </div>
     
         <div></div>
       </main>
