@@ -12,36 +12,36 @@ export default function Home() {
     },
   ]);
 
-  const callGetResponse = async () => {
-    setIsLoading(true);
-    let temp = messages;
-    temp.push({ role: "user", content: theInput });
-		setMessages(temp)
-    setTheInput("");
-    console.log("Calling OpenAI...");
+  // const callGetResponse = async () => {
+  //   setIsLoading(true);
+  //   let temp = messages;
+  //   temp.push({ role: "user", content: theInput });
+	// 	setMessages(temp)
+  //   setTheInput("");
+  //   console.log("Calling OpenAI...");
 
-    const response = await fetch(`https://6425q4q74l.execute-api.us-west-2.amazonaws.com/Testing`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+  //   const response = await fetch(`https://6425q4q74l.execute-api.us-west-2.amazonaws.com/Testing`, {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
 
-      body: JSON.stringify({ messages }),
-    });
+  //     body: JSON.stringify({ messages }),
+  //   });
 
-    const data = await response.json();
-    const { output } = data;
-    console.log("OpenAI replied...", output.content);
+  //   const data = await response.json();
+  //   const { output } = data;
+  //   console.log("OpenAI replied...", output.content);
 
-    setMessages((prevMessages) => [...prevMessages, output]);
-    setIsLoading(false);
+  //   setMessages((prevMessages) => [...prevMessages, output]);
+  //   setIsLoading(false);
 
-  };
+  // };
 
   const Submit = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (event.key === "Enter") {
       event.preventDefault();
-      callGetResponse();
+      //callGetResponse();
     }
   }
 
@@ -95,7 +95,7 @@ export default function Home() {
             onKeyDown={Submit} />
             <button
             
-              onClick={callGetResponse}
+    
               className="w-[15%] bg-blue-500 px-4 py-2 rounded-r"
             >
               send
